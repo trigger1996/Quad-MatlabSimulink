@@ -1,0 +1,69 @@
+CC     = "C:\Program Files\MATLAB\R2014b\sys\lcc64\lcc64\bin\lcc64.exe"
+LD     = "C:\Program Files\MATLAB\R2014b\sys\lcc64\lcc64\bin\lcclnk64.exe"
+LIBCMD = "C:\Program Files\MATLAB\R2014b\sys\lcc64\lcc64\bin\lcclib64.exe"
+CFLAGS = -dll -noregistrylookup  -c -Zp8 -DLCC_WIN64 -DMATLAB_MEX_FILE -DMX_COMPAT_32 -nodeclspec 
+LDFLAGS = -s -dll -L"C:\Program Files\MATLAB\R2014b\sys\lcc64\lcc64\lib64" -entry LibMain -map sfun.map 
+LIBFLAGS = 
+
+OBJECTS = \
+	"PID_quad_x_model_sfun.obj"\
+	"c1_PID_quad_x_model.obj"\
+	"c2_PID_quad_x_model.obj"\
+	"c3_PID_quad_x_model.obj"\
+	"c4_PID_quad_x_model.obj"\
+	"c5_PID_quad_x_model.obj"\
+	"c6_PID_quad_x_model.obj"\
+	"c7_PID_quad_x_model.obj"\
+	"c8_PID_quad_x_model.obj"\
+	"c9_PID_quad_x_model.obj"\
+	"c10_PID_quad_x_model.obj"\
+	"c11_PID_quad_x_model.obj"\
+	"PID_quad_x_model_sfun_registry.obj"\
+	"lccstub.obj"\
+	"PID_quad_x_model_sfun.def"\
+	"C:\Program Files\MATLAB\R2014b\extern\lib\win64\microsoft\sf_runtime.lib"\
+	"C:\Program Files\MATLAB\R2014b\extern\lib\win64\microsoft\libmwblas.lib"\
+	"C:\Program Files\MATLAB\R2014b\extern\lib\win64\microsoft\libmx.lib"\
+	"C:\Program Files\MATLAB\R2014b\extern\lib\win64\microsoft\libmex.lib"\
+	"C:\Program Files\MATLAB\R2014b\extern\lib\win64\microsoft\libmat.lib"\
+	"C:\Program Files\MATLAB\R2014b\extern\lib\win64\microsoft\libfixedpoint.lib"\
+	"C:\Program Files\MATLAB\R2014b\extern\lib\win64\microsoft\libut.lib"\
+	"C:\Program Files\MATLAB\R2014b\extern\lib\win64\microsoft\libmwmathutil.lib"\
+	"C:\Program Files\MATLAB\R2014b\extern\lib\win64\microsoft\libemlrt.lib"\
+	"C:\Program Files\MATLAB\R2014b\extern\lib\win64\microsoft\libmwsl_log_load_blocks.lib"\
+	"C:\Program Files\MATLAB\R2014b\extern\lib\win64\microsoft\libmwsimulink.lib"\
+	"C:\Program Files\MATLAB\R2014b\lib\win64\libmwipp.lib"\
+
+INCLUDE_PATH= -I"C:\Program Files\MATLAB\R2014b\sys\lcc64\lcc64\include64"  -I"C:\Program Files\MATLAB\R2014b\extern\include"  -I"C:\Program Files\MATLAB\R2014b\simulink\include"  -I"C:\Program Files\MATLAB\R2014b\stateflow\c\mex\include"  -I"C:\Program Files\MATLAB\R2014b\rtw\c\src"  -I"D:\__Workspace\MATLAB\Quadcopter\Artificial Neural Networks\quad\slprj\_sfprj\PID_quad_x_model\_self\sfun\src" 
+ 
+
+PID_quad_x_model_sfun.mexw64 : $(MAKEFILE) $(OBJECTS)
+	$(LD) $(LDFLAGS) -o PID_quad_x_model_sfun.mexw64 @PID_quad_x_model_sfun.lmko
+PID_quad_x_model_sfun.obj :	"PID_quad_x_model_sfun.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "PID_quad_x_model_sfun.c"
+c1_PID_quad_x_model.obj :	"c1_PID_quad_x_model.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "c1_PID_quad_x_model.c"
+c2_PID_quad_x_model.obj :	"c2_PID_quad_x_model.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "c2_PID_quad_x_model.c"
+c3_PID_quad_x_model.obj :	"c3_PID_quad_x_model.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "c3_PID_quad_x_model.c"
+c4_PID_quad_x_model.obj :	"c4_PID_quad_x_model.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "c4_PID_quad_x_model.c"
+c5_PID_quad_x_model.obj :	"c5_PID_quad_x_model.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "c5_PID_quad_x_model.c"
+c6_PID_quad_x_model.obj :	"c6_PID_quad_x_model.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "c6_PID_quad_x_model.c"
+c7_PID_quad_x_model.obj :	"c7_PID_quad_x_model.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "c7_PID_quad_x_model.c"
+c8_PID_quad_x_model.obj :	"c8_PID_quad_x_model.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "c8_PID_quad_x_model.c"
+c9_PID_quad_x_model.obj :	"c9_PID_quad_x_model.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "c9_PID_quad_x_model.c"
+c10_PID_quad_x_model.obj :	"c10_PID_quad_x_model.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "c10_PID_quad_x_model.c"
+c11_PID_quad_x_model.obj :	"c11_PID_quad_x_model.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "c11_PID_quad_x_model.c"
+PID_quad_x_model_sfun_registry.obj :	"PID_quad_x_model_sfun_registry.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "PID_quad_x_model_sfun_registry.c"
+lccstub.obj :	"C:\Program Files\MATLAB\R2014b\sys\lcc64\lcc64\mex\lccstub.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "C:\Program Files\MATLAB\R2014b\sys\lcc64\lcc64\mex\lccstub.c"

@@ -1,0 +1,72 @@
+CC     = "C:\Program Files\MATLAB\R2014b\sys\lcc64\lcc64\bin\lcc64.exe"
+LD     = "C:\Program Files\MATLAB\R2014b\sys\lcc64\lcc64\bin\lcclnk64.exe"
+LIBCMD = "C:\Program Files\MATLAB\R2014b\sys\lcc64\lcc64\bin\lcclib64.exe"
+CFLAGS = -dll -noregistrylookup  -c -Zp8 -DLCC_WIN64 -DMATLAB_MEX_FILE -DMX_COMPAT_32 -nodeclspec 
+LDFLAGS = -s -dll -L"C:\Program Files\MATLAB\R2014b\sys\lcc64\lcc64\lib64" -entry LibMain -map sfun.map 
+LIBFLAGS = 
+
+OBJECTS = \
+	"quad_x_train_sfun.obj"\
+	"c1_quad_x_train.obj"\
+	"c2_quad_x_train.obj"\
+	"c3_quad_x_train.obj"\
+	"c4_quad_x_train.obj"\
+	"c5_quad_x_train.obj"\
+	"c6_quad_x_train.obj"\
+	"c7_quad_x_train.obj"\
+	"c8_quad_x_train.obj"\
+	"c9_quad_x_train.obj"\
+	"c10_quad_x_train.obj"\
+	"c11_quad_x_train.obj"\
+	"c12_quad_x_train.obj"\
+	"quad_x_train_sfun_registry.obj"\
+	"lccstub.obj"\
+	"quad_x_train_sfun.def"\
+	"C:\Program Files\MATLAB\R2014b\extern\lib\win64\microsoft\sf_runtime.lib"\
+	"C:\Program Files\MATLAB\R2014b\extern\lib\win64\microsoft\libmwblas.lib"\
+	"C:\Program Files\MATLAB\R2014b\extern\lib\win64\microsoft\libmx.lib"\
+	"C:\Program Files\MATLAB\R2014b\extern\lib\win64\microsoft\libmex.lib"\
+	"C:\Program Files\MATLAB\R2014b\extern\lib\win64\microsoft\libmat.lib"\
+	"C:\Program Files\MATLAB\R2014b\extern\lib\win64\microsoft\libfixedpoint.lib"\
+	"C:\Program Files\MATLAB\R2014b\extern\lib\win64\microsoft\libut.lib"\
+	"C:\Program Files\MATLAB\R2014b\extern\lib\win64\microsoft\libmwmathutil.lib"\
+	"C:\Program Files\MATLAB\R2014b\extern\lib\win64\microsoft\libemlrt.lib"\
+	"C:\Program Files\MATLAB\R2014b\extern\lib\win64\microsoft\libmwsl_log_load_blocks.lib"\
+	"C:\Program Files\MATLAB\R2014b\extern\lib\win64\microsoft\libmwsimulink.lib"\
+	"C:\Program Files\MATLAB\R2014b\lib\win64\libmwipp.lib"\
+
+INCLUDE_PATH= -I"C:\Program Files\MATLAB\R2014b\sys\lcc64\lcc64\include64"  -I"C:\Program Files\MATLAB\R2014b\extern\include"  -I"C:\Program Files\MATLAB\R2014b\simulink\include"  -I"C:\Program Files\MATLAB\R2014b\stateflow\c\mex\include"  -I"C:\Program Files\MATLAB\R2014b\rtw\c\src"  -I"D:\__Workspace\MATLAB\Quadcopter\Artificial Neural Networks\quad\slprj\_sfprj\quad_x_train\_self\sfun\src" 
+ 
+
+quad_x_train_sfun.mexw64 : $(MAKEFILE) $(OBJECTS)
+	$(LD) $(LDFLAGS) -o quad_x_train_sfun.mexw64 @quad_x_train_sfun.lmko
+quad_x_train_sfun.obj :	"quad_x_train_sfun.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "quad_x_train_sfun.c"
+c1_quad_x_train.obj :	"c1_quad_x_train.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "c1_quad_x_train.c"
+c2_quad_x_train.obj :	"c2_quad_x_train.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "c2_quad_x_train.c"
+c3_quad_x_train.obj :	"c3_quad_x_train.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "c3_quad_x_train.c"
+c4_quad_x_train.obj :	"c4_quad_x_train.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "c4_quad_x_train.c"
+c5_quad_x_train.obj :	"c5_quad_x_train.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "c5_quad_x_train.c"
+c6_quad_x_train.obj :	"c6_quad_x_train.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "c6_quad_x_train.c"
+c7_quad_x_train.obj :	"c7_quad_x_train.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "c7_quad_x_train.c"
+c8_quad_x_train.obj :	"c8_quad_x_train.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "c8_quad_x_train.c"
+c9_quad_x_train.obj :	"c9_quad_x_train.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "c9_quad_x_train.c"
+c10_quad_x_train.obj :	"c10_quad_x_train.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "c10_quad_x_train.c"
+c11_quad_x_train.obj :	"c11_quad_x_train.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "c11_quad_x_train.c"
+c12_quad_x_train.obj :	"c12_quad_x_train.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "c12_quad_x_train.c"
+quad_x_train_sfun_registry.obj :	"quad_x_train_sfun_registry.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "quad_x_train_sfun_registry.c"
+lccstub.obj :	"C:\Program Files\MATLAB\R2014b\sys\lcc64\lcc64\mex\lccstub.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "C:\Program Files\MATLAB\R2014b\sys\lcc64\lcc64\mex\lccstub.c"
